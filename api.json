@@ -1,0 +1,62 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Laravel",
+        "version": "0.0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/api"
+        }
+    ],
+    "paths": {
+        "/example": {
+            "get": {
+                "operationId": "example.show",
+                "tags": [
+                    "Example"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`ExampleResource`",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExampleResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ExampleResource": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "idle",
+                                    "charging",
+                                    "discharging"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "status"
+                ],
+                "title": "ExampleResource"
+            }
+        }
+    }
+}

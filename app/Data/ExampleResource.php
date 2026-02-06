@@ -3,8 +3,9 @@
 namespace App\Data;
 
 use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Resource;
 
-class ExampleResource extends Data
+class ExampleResource extends Resource
 {
     public function __construct(
         /**
